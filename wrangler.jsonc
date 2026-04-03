@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "pinoyseoul-link-shortener",
+  "name": "linkshortener",
   "main": ".output/server/index.mjs",
   "assets": {
     "binding": "ASSETS",

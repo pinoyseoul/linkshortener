@@ -10,22 +10,15 @@ interface User {
 
 const { isMobile } = useSidebar()
 
-const hostname = computed<string>(() => {
-  if (import.meta.client) {
-    return window.location.hostname
-  }
-  return 'localhost'
-})
-
 const user = computed<User>(() => ({
-  name: 'Root',
-  email: `root@${hostname.value}`,
-  avatar: '/dongsaeng.png',
+  name: 'Admin',
+  email: 'admin@pinoyseoul.com',
+  avatar: '/sink.png',
 }))
 
 function logOut() {
   localStorage.removeItem('PinoySeoulSiteToken')
-  navigateTo('/dashboard/login')
+  window.location.href = '/dashboard/login'
 }
 </script>
 
