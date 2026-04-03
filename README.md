@@ -1,115 +1,92 @@
-﻿# ⚡ PinoySeoul Link Shortener
+# PinoySeoul Link Shortener
 
-**A Simple / Speedy / Secure Link Shortener with Analytics, 100% run on Cloudflare.**
+Internal URL shortening service for PinoySeoul, running entirely on Cloudflare's edge network.
 
-[<img src="https://devin.ai/assets/deepwiki-badge.png" alt="DeepWiki" height="20"/>](https://deepwiki.com/pinoyseoul/linkshortener)
-![Cloudflare](https://img.shields.io/badge/Cloudflare-F69652?style=flat&logo=cloudflare&logoColor=white)
-![Nuxt](https://img.shields.io/badge/Nuxt-00DC82?style=flat&logo=nuxtdotjs&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
-![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000000?style=flat&logo=shadcnui&logoColor=white)
+## What It Does
 
-![Hero](./public/image.png)
+- Shorten URLs with custom or AI-generated slugs
+- Track clicks, visitors, referrers, and geographic data
+- Set link expiration and device-specific redirects (iOS/Android)
+- Generate QR codes for any shortened link
+- Import/export links in bulk (JSON/CSV)
+- Multi-language dashboard (9 languages)
+- Dark mode support
 
----
+## Stack
 
-## ✨ Features
+| Layer | Technology |
+|-------|-----------|
+| Framework | Nuxt 4 + Nitro |
+| Runtime | Cloudflare Workers |
+| Storage | Workers KV |
+| Analytics | Workers Analytics Engine |
+| UI | shadcn-vue + Tailwind CSS |
+| AI | Cloudflare Workers AI |
 
-- **🔗 URL Shortening:** Compress your URLs to their minimal length.
-- **📈 Analytics:** Monitor link analytics and gather insightful statistics.
-- **☁️ Serverless:** Deploy without the need for traditional servers.
-- **🎨 Customizable Slug:** Support for personalized slugs and case sensitivity.
-- **🪄 AI Slug:** Leverage AI to generate slugs.
-- **⏰ Link Expiration:** Set expiration dates for your links.
-- **📱 Device Routing:** Redirect iOS/Android users to different URLs (App Store links).
-- **🖼️ OpenGraph Preview:** Custom social media previews with title, description, and image.
-- **📊 Real-time Analytics:** Live 3D globe visualization and real-time event logs.
-- **🔲 QR Code:** Generate QR codes for your short links.
-- **📦 Import/Export:** Bulk migration via JSON/CSV files.
-- **🌍 Multi-language:** Full i18n support for the dashboard.
-- **🌙 Dark Mode:** Light, dark, and system theme support.
+## Quick Start
 
-## 🪧 Demo
+### Prerequisites
 
-Experience the demo at [a.pinoyseoul.com](https://a.pinoyseoul.com/dashboard). Log in using the Site Token below:
+- Node.js 22+
+- pnpm
+- Cloudflare account with Workers enabled
 
-```txt
-Site Token: PinoySeoulCool
-```
-
-<details>
-  <summary><b>Screenshots</b></summary>
-  <img alt="Analytics" src="./docs/images/a.pinoyseoul.com_dashboard.png"/>
-  <img alt="Links" src="./docs/images/a.pinoyseoul.com_dashboard_links.png"/>
-  <img alt="Link Analytics" src="./docs/images/a.pinoyseoul.com_dashboard_link_slug.png"/>
-</details>
-
-## 🧱 Technologies Used
-
-- **Framework**: [Nuxt](https://nuxt.com/)
-- **Database**: [Cloudflare Workers KV](https://developers.cloudflare.com/kv/)
-- **Analytics Engine**: [Cloudflare Workers Analytics Engine](https://developers.cloudflare.com/analytics/)
-- **UI Components**: [shadcn-vue](https://www.shadcn-vue.com/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Deployment**: [Cloudflare](https://www.cloudflare.com/)
-
-## 🏗️ Deployment
-
-> Video tutorial: [Watch here](https://www.youtube.com/watch?v=MkU23U2VE9E)
-
-We currently support deployment to [Cloudflare Workers](./docs/deployment/workers.md) (recommended) and [Cloudflare Pages](./docs/deployment/pages.md).
-
-## ⚒️ Configuration
-
-[Configuration Docs](./docs/configuration.md)
-
-## 🔌 API
-
-[API Docs](./docs/api.md)
-
-## 🤖 AI Skills
-
-Install PinoySeoul AI Skills for enhanced coding assistance:
+### Setup
 
 ```bash
-npx skills add pinoyseoul/linkshortener
+pnpm install
+cp .env.example .env
+# Edit .env with your Cloudflare credentials
 ```
 
-## 🧰 MCP
+### Development
 
-We currently do not support native MCP Server, but we have OpenAPI documentation, and you can use the following method to support MCP.
-
-> Replace the domain name in `OPENAPI_SPEC_URL` with your own domain name.
->
-> The `API_KEY` is the same as the `NUXT_SITE_TOKEN` in the environment variables.
-
-```json
-{
-  "mcpServers": {
-    "PinoySeoul": {
-      "command": "uvx",
-      "args": [
-        "mcp-openapi-proxy"
-      ],
-      "env": {
-        "OPENAPI_SPEC_URL": "https://a.pinoyseoul.com/_docs/openapi.json",
-        "API_KEY": "PinoySeoulCool",
-        "TOOL_WHITELIST": "/api/link"
-      }
-    }
-  }
-}
+```bash
+pnpm dev
 ```
 
-## 🙋🏻 FAQs
+### Build
 
-[FAQs](./docs/faqs.md)
+```bash
+NUXT_SITE_TOKEN=your-token npx nuxt build
+```
 
-## 💖 Credits
+### Deploy
 
-1. [**miantiao (Original Author)**](https://github.com/miantiao-me/sink/)
-2. [**Cloudflare**](https://www.cloudflare.com/)
-3. [**NuxtHub**](https://hub.nuxt.com/)
-4. [**Astroship**](https://astroship.web3templates.com/)
-5. [**Tailark**](https://tailark.com/)
+```bash
+npx wrangler deploy
+```
 
+Or push to `main` — GitHub Actions handles the rest.
 
+## Configuration
+
+See [`.env.example`](.env.example) for all available environment variables.
+
+Key variables:
+
+| Variable | Purpose |
+|----------|---------|
+| `NUXT_SITE_TOKEN` | Dashboard access password (min 8 chars) |
+| `NUXT_CF_ACCOUNT_ID` | Cloudflare account ID |
+| `NUXT_CF_API_TOKEN` | Cloudflare API token (needs Workers + KV + R2 + Analytics permissions) |
+| `NUXT_DATASET` | Analytics Engine dataset name |
+| `NUXT_AI_MODEL` | Cloudflare AI model for slug generation |
+
+## Architecture
+
+```
+User → a.pinoyseoul.com → Cloudflare Worker
+                              ├── KV (link storage)
+                              ├── Analytics Engine (click tracking)
+                              ├── R2 (daily backups)
+                              └── Workers AI (smart slugs)
+```
+
+## Credits
+
+Forked from [Sink](https://github.com/miantiao-me/sink) by miantiao. Whitelabeled and customized for PinoySeoul.
+
+## License
+
+MIT
