@@ -37,7 +37,7 @@ jobs:
           NUXT_SITE_TOKEN: ${{ secrets.NUXT_SITE_TOKEN }}
 
       - name: Deploy to Cloudflare
-        run: pnpm wrangler deploy
+        run: pnpm wrangler deploy --no-bundle
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.NUXT_CF_ACCOUNT_ID }}
