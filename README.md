@@ -120,7 +120,7 @@ We currently do not support native MCP Server, but we have OpenAPI documentation
 
 ## 💖 Credits
 
-1. [**miantiao (Original Author)**](([https://github.com/miantiao-me/sink))
+1. [**miantiao (Original Author)**](https://github.com/miantiao-me/sink/)
 2. [**Cloudflare**](https://www.cloudflare.com/)
 3. [**NuxtHub**](https://hub.nuxt.com/)
 4. [**Astroship**](https://astroship.web3templates.com/)
