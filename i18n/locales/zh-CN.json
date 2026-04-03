@@ -36,14 +36,14 @@
   },
   "layouts": {
     "footer": {
-      "copyright": "产品来自 HTML.ZONE",
+      "copyright": "产品来自 PinoySeoul",
       "social": {
         "email": "邮箱",
         "telegram": "Telegram",
         "blog": "博客",
         "twitter": "Twitter",
         "mastodon": "Mastodon",
-        "github": "GitHub"
+        "github": "GitHub","facebook":"Facebook"
       }
     },
     "header": {
@@ -63,7 +63,7 @@
     "import": "导入",
     "export": "导出",
     "coffee": "请我喝杯咖啡",
-    "github": "GitHub",
+    "github": "GitHub","facebook":"Facebook",
     "stars": "Stars",
     "update": "新版本 {version} 可用（当前: {current}）"
   },

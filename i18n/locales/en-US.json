@@ -1,4 +1,4 @@
-{
+﻿{
   "common": {
     "i18n": "Multi Language",
     "abbreviations": "En",
@@ -36,14 +36,14 @@
   },
   "layouts": {
     "footer": {
-      "copyright": "Products of HTML.ZONE",
+      "copyright": "PinoySeoul Media Enterprise",
       "social": {
         "email": "Email",
         "telegram": "Telegram",
         "blog": "Blog",
         "twitter": "Twitter",
         "mastodon": "Mastodon",
-        "github": "GitHub"
+        "github": "GitHub","facebook":"Facebook"
       }
     },
     "header": {
@@ -63,7 +63,7 @@
     "import": "Import",
     "export": "Export",
     "coffee": "Buy me a coffee",
-    "github": "GitHub",
+    "github": "GitHub","facebook":"Facebook",
     "stars": "Stars",
     "update": "New version {version} available (current: {current})"
   },

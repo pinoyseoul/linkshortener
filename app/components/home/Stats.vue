@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const { stats } = useGithubStats()
-</script>
-
 <template>
   <section
     class="
@@ -29,7 +25,7 @@ const { stats } = useGithubStats()
       <div
         class="
           grid gap-0 divide-y
-          md:grid-cols-2 md:gap-2 md:divide-x md:divide-y-0
+          md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0
         "
       >
         <div
@@ -38,16 +34,24 @@ const { stats } = useGithubStats()
             md:pb-0
           "
         >
-          <ClientOnly>
-            <template #fallback>
-              <Skeleton class="mx-auto h-12 w-24" />
-            </template>
-            <div class="text-5xl font-bold tabular-nums">
-              {{ stats.stars }}
-            </div>
-          </ClientOnly>
+          <div class="text-5xl font-bold tabular-nums">
+            100%
+          </div>
           <p class="text-muted-foreground">
-            {{ $t('home.stats.stars') }}
+            Cloudflare Powered
+          </p>
+        </div>
+        <div
+          class="
+            space-y-4 pt-6 pb-6 text-center
+            md:pt-0
+          "
+        >
+          <div class="text-5xl font-bold tabular-nums">
+            0ms
+          </div>
+          <p class="text-muted-foreground">
+            Cold Start
           </p>
         </div>
         <div
@@ -56,16 +60,11 @@ const { stats } = useGithubStats()
             md:pt-0
           "
         >
-          <ClientOnly>
-            <template #fallback>
-              <Skeleton class="mx-auto h-12 w-24" />
-            </template>
-            <div class="text-5xl font-bold tabular-nums">
-              {{ stats.forks }}
-            </div>
-          </ClientOnly>
+          <div class="text-5xl font-bold tabular-nums">
+            $0
+          </div>
           <p class="text-muted-foreground">
-            {{ $t('home.stats.forks') }}
+            Running Cost
           </p>
         </div>
       </div>

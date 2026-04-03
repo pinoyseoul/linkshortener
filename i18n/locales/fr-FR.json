@@ -36,14 +36,14 @@
   },
   "layouts": {
     "footer": {
-      "copyright": "Produits de HTML.ZONE",
+      "copyright": "Produits de PinoySeoul",
       "social": {
         "email": "Email",
         "telegram": "Telegram",
         "blog": "Blog",
         "twitter": "Twitter",
         "mastodon": "Mastodon",
-        "github": "GitHub"
+        "github": "GitHub","facebook":"Facebook"
       }
     },
     "header": {
@@ -63,7 +63,7 @@
     "import": "Importer",
     "export": "Exporter",
     "coffee": "Offrez-moi un café",
-    "github": "GitHub",
+    "github": "GitHub","facebook":"Facebook",
     "stars": "Stars",
     "update": "Nouvelle version {version} disponible (actuelle : {current})"
   },

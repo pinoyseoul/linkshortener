@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { Menu, Star, X } from 'lucide-vue-next'
-import { GitHubIcon, TelegramIcon, XIcon } from 'vue3-simple-icons'
+import { Menu, X } from 'lucide-vue-next'
+import { FacebookIcon, XIcon } from 'vue3-simple-icons'
 
 const showMenu = ref(false)
-const { title, telegram, twitter, github } = useAppConfig()
-const { stats } = useGithubStats()
+const { title, twitter, facebook } = useAppConfig()
 </script>
 
 <template>
@@ -38,7 +37,7 @@ const { stats } = useGithubStats()
                   class="flex size-8 items-center justify-center rounded-full"
                 >
                   <img
-                    src="/dongsaeng.png"
+                    src="/sink.png"
                     :alt="`${title} Logo`"
                     class="size-full rounded-full"
                   >
@@ -92,23 +91,6 @@ const { stats } = useGithubStats()
                   md:w-fit
                 "
               >
-                <Button
-                  as-child
-                  variant="outline"
-                  size="sm"
-                >
-                  <a
-                    :href="github"
-                    target="_blank"
-                    :title="$t('layouts.footer.social.github')"
-                    class="flex items-center gap-1.5"
-                  >
-                    <GitHubIcon class="size-4" />
-                    <Star class="size-3" />
-                    <span class="tabular-nums">{{ stats.stars }}</span>
-                  </a>
-                </Button>
-
                 <SwitchLanguage />
                 <SwitchTheme />
               </div>
@@ -149,7 +131,7 @@ const { stats } = useGithubStats()
                   class="flex size-8 items-center justify-center rounded-full"
                 >
                   <img
-                    src="/dongsaeng.png"
+                    src="/sink.png"
                     :alt="`${title} Logo`"
                     class="size-full rounded-full"
                   >
@@ -161,12 +143,12 @@ const { stats } = useGithubStats()
             <small class="block text-center text-sm text-muted-foreground">
               &copy; {{ new Date().getFullYear() }}
               <a
-                href="https://html.zone"
+                href="https://www.pinoyseoul.com"
                 target="_blank"
-                title="HTML.ZONE"
+                title="PinoySeoul"
                 class="hover:text-primary"
               >
-                {{ $t('layouts.footer.copyright') }}
+                PinoySeoul Media Enterprise
               </a>
             </small>
           </div>
@@ -178,7 +160,7 @@ const { stats } = useGithubStats()
               target="_blank"
               rel="noopener noreferrer"
               :title="$t('layouts.footer.social.twitter')"
-              aria-label="Twitter"
+              aria-label="X (Twitter)"
               class="
                 block text-muted-foreground
                 hover:text-primary
@@ -187,32 +169,18 @@ const { stats } = useGithubStats()
               <XIcon class="size-6" />
             </a>
             <a
-              v-if="telegram"
-              :href="telegram"
+              v-if="facebook"
+              :href="facebook"
               target="_blank"
               rel="noopener noreferrer"
-              :title="$t('layouts.footer.social.telegram')"
-              aria-label="Telegram"
+              :title="$t('layouts.footer.social.facebook')"
+              aria-label="Facebook"
               class="
                 block text-muted-foreground
                 hover:text-primary
               "
             >
-              <TelegramIcon class="size-6" />
-            </a>
-            <a
-              v-if="github"
-              :href="github"
-              target="_blank"
-              rel="noopener noreferrer"
-              :title="$t('layouts.footer.social.github')"
-              aria-label="GitHub"
-              class="
-                block text-muted-foreground
-                hover:text-primary
-              "
-            >
-              <GitHubIcon class="size-6" />
+              <FacebookIcon class="size-6" />
             </a>
           </div>
         </div>

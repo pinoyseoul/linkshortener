@@ -14,7 +14,7 @@ defineRouteMeta({
 
 export default eventHandler(() => {
   return {
-    name: 'PinoySeoul',
+    name: 'a',
     url: 'https://a.pinoyseoul.com',
   }
 })

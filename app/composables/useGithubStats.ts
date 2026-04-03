@@ -25,8 +25,8 @@ export function useGithubStats() {
   )
 
   const formattedStats = computed(() => ({
-    stars: data.value?.stars?.toLocaleString() ?? '6,000',
-    forks: data.value?.forks?.toLocaleString() ?? '4,000',
+    stars: data.value?.stars?.toLocaleString() ?? '0',
+    forks: data.value?.forks?.toLocaleString() ?? '0',
   }))
 
   return { stats: formattedStats, status }

@@ -41,8 +41,8 @@
   "r2_buckets": [
     {
       "binding": "R2",
-      "preview_bucket_name": "sink",
-      "bucket_name": "sink"
+      "preview_bucket_name": "pinoyseoul",
+      "bucket_name": "pinoyseoul"
     }
   ],
   "triggers": {

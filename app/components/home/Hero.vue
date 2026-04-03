@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { ArrowRight } from 'lucide-vue-next'
-import { GitHubIcon, XIcon } from 'vue3-simple-icons'
 import heroUrl from '@/assets/images/hero.svg?url'
 
-const { title, description, github, twitter } = useAppConfig()
+const { title, description, twitter, facebook } = useAppConfig()
 </script>
 
 <template>
@@ -26,30 +25,35 @@ const { title, description, github, twitter } = useAppConfig()
             lg:text-left
           "
         >
-          <!-- Twitter Follow Badge -->
-          <a
-            :href="twitter"
-            target="_blank"
-            rel="noopener"
-            :title="$t('home.twitter.follow')"
+          <div
             class="
-              mx-auto mb-8 inline-flex w-fit items-center gap-2 rounded-full
-              border p-1 pr-3
+              mx-auto mb-8 flex flex-wrap items-center justify-center gap-3
               lg:mx-0
             "
           >
-            <span
+            <a
+              :href="twitter"
+              target="_blank"
+              rel="noopener"
               class="
-                flex items-center gap-1.5 rounded-full bg-muted px-2 py-1
-                text-xs
+                rounded-full border px-3 py-1 text-sm
+                hover:bg-muted
               "
             >
-              <XIcon aria-hidden="true" class="size-3" />
-            </span>
-            <span class="text-sm">{{ $t('home.twitter.follow') }}</span>
-            <span class="block h-4 w-px bg-border" />
-            <ArrowRight aria-hidden="true" class="size-4" />
-          </a>
+              Follow on X
+            </a>
+            <a
+              :href="facebook"
+              target="_blank"
+              rel="noopener"
+              class="
+                rounded-full border px-3 py-1 text-sm
+                hover:bg-muted
+              "
+            >
+              Follow on Facebook
+            </a>
+          </div>
 
           <h1
             class="
@@ -78,23 +82,8 @@ const { title, description, github, twitter } = useAppConfig()
             >
               <NuxtLink to="/dashboard">
                 <span class="text-nowrap">{{ $t('dashboard.title') }}</span>
+                <ArrowRight class="ml-2 h-4 w-4" />
               </NuxtLink>
-            </Button>
-            <Button
-              as-child
-              size="lg"
-              variant="ghost"
-              class="px-5 text-base"
-            >
-              <a
-                :href="github"
-                target="_blank"
-                :title="$t('layouts.footer.social.github')"
-                class="flex items-center gap-1.5"
-              >
-                <GitHubIcon aria-hidden="true" class="size-5" />
-                <span class="text-nowrap">{{ $t('home.hero.github_repo') }}</span>
-              </a>
             </Button>
           </div>
         </div>
