@@ -37,11 +37,12 @@ jobs:
           NUXT_SITE_TOKEN: ${{ secrets.NUXT_SITE_TOKEN }}
 
       - name: Deploy to Cloudflare
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.NUXT_CF_ACCOUNT_ID }}
           command: deploy
+          packageManager: pnpm
         env:
           NUXT_SITE_TOKEN: ${{ secrets.NUXT_SITE_TOKEN }}
           NUXT_CF_ACCOUNT_ID: ${{ secrets.NUXT_CF_ACCOUNT_ID }}
