@@ -52,20 +52,6 @@ Site Token: PinoySeoulCool
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Deployment**: [Cloudflare](https://www.cloudflare.com/)
 
-## 🚗 Roadmap [WIP]
-
-We welcome your contributions and PRs.
-
-- [x] Browser Extension - [PinoySeoul Tool](https://github.com/zhuzhuyule/PinoySeoul-extension)
-- [x] Chrome Extension - [PinoySeoul Quick Shorten](https://chromewebstore.google.com/detail/PinoySeoul-quick-shorten/emlojomjpenjgkaphajcokijobpkejih)
-- [x] Raycast Extension - [Raycast-PinoySeoul](https://github.com/foru17/raycast-PinoySeoul)
-- [x] Apple Shortcuts - [PinoySeoul Shortcuts](https://s.search1api.com/PinoySeoul001)
-- [x] iOS App - [PinoySeoul](https://apps.apple.com/app/id6745417598)
-- [ ] Enhanced Link Management (with Cloudflare D1)
-- [ ] Analytics Enhancements (Support for merging filter conditions)
-- [ ] Dashboard Performance Optimization (Infinite loading)
-- [ ] Units Test
-
 ## 🏗️ Deployment
 
 > Video tutorial: [Watch here](https://www.youtube.com/watch?v=MkU23U2VE9E)
