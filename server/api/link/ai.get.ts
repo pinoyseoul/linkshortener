@@ -65,6 +65,7 @@ export default eventHandler(async (event) => {
   console.info('ai response shape', typeof raw)
   let content = typeof raw === 'string' ? raw : JSON.stringify(raw)
   // Strip markdown code block wrapper (e.g. ```json\n{...}\n```)
+  // eslint-disable-next-line e18e/prefer-static-regex
   const codeBlockMatch = content.match(/```\w*\n([^`]+)```/)
   if (codeBlockMatch?.[1]) {
     content = codeBlockMatch[1].trim()
